@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You</title>
+<style>
+
+    body {
+        background-color: black; /* Set the background color to black */
+    }
+    #container {
+        text-align: center;
+        margin-top: 10px; /* Adjust as needed */
+    }
+    #resolutionSelector {
+        margin-bottom: 20px; /* Adjust as needed */
+    }
+    #photo {
+        display: none;
+        max-width: 25%;
+        height: auto;
+        margin: 0 auto; /* Center the photo horizontally */
+    }
+</style>
+</head>
+<body>
+
+  <img id="photo" src="" alt="Photo">
+
+<div id="container">
+    <select id="resolutionSelector" onchange="changePhoto()">
+        <option value="blank"> </option>
+        <option value="240p">240p</option>
+        <option value="480p">480p</option>
+        <option value="720p">720p</option>
+        <option value="1080p">1080p</option>
+    </select>
+
+</div>
+
+<script>
+    function changePhoto() {
+        var resolution = document.getElementById("resolutionSelector").value;
+        var photo = document.getElementById("photo");
+
+        switch(resolution) {
+            case "blank":
+                photo.src = "https://media.discordapp.net/attachments/1079732918987014185/1229828103598116894/image.png?ex=663119ac&is=661ea4ac&hm=55f1380f586b9daa77b72ca32657eb7a8fefd15956272ae4a18fa47db9fd98f0&=&format=webp&quality=lossless";
+                break;
+            case "240p":
+                photo.src = "https://media.discordapp.net/attachments/1079732918987014185/1229826908863074355/pinpng.com-moon-png-609520.png?ex=66311890&is=661ea390&hm=a636e7c86faf202b361bf8ee52d6143f9e64116e2257b1880d3223d686248aa4&=&format=webp&quality=lossless&width=651&height=671";
+                break;
+            case "480p":
+                photo.src = "https://media.discordapp.net/attachments/1079732918987014185/1229826908586508288/pinpng.com-moon-png-609424.png?ex=66311890&is=661ea390&hm=50344001e8a02a65c8bd0e3a0ddde1a91a62c045b49cdb37ecebe69a0d381454&=&format=webp&quality=lossless";
+                break;
+            case "720p":
+                photo.src = "https://media.discordapp.net/attachments/1079732918987014185/1229826908133527684/pinpng.com-moon-png-609324.png?ex=6631188f&is=661ea38f&hm=88181cab7e968b02f0492dc8f9c79980659a3ffee2cb57e2106a8a97609adb8e&=&format=webp&quality=lossless&width=660&height=671";
+                break;
+            case "1080p":
+                photo.src = "https://cdn.discordapp.com/attachments/1079732918987014185/1229830841991958600/Clip-Desktop04-17-2024_0-22-04-024_mp4-2024-04-17-00-26-04-406-ezgif.com-video-to-gif-converter.gif?ex=66311c39&is=661ea739&hm=34f2d5b068b512c79d6d43337c86cae64fc487463a1843b5ca1fa4e574f76385&";
+                break;
+            default:
+                photo.src = "";
+        }
+
+        if (resolution !== "Select Resolution") {
+            photo.style.display = "block";
+        } else {
+            photo.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>
